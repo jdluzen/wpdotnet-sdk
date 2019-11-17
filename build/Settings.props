@@ -6,7 +6,7 @@
     <!-- common version -->
     <VersionPrefix Condition=" '$(VersionPrefix)'=='' ">1.0.0</VersionPrefix>
     
-    <PeachpieVersion>0.9.600</PeachpieVersion>
+    <PeachpieVersion>1.0.0-appv3046</PeachpieVersion>
     <WordPressVersion>5.3.0</WordPressVersion>
 
     <!-- metadata generation -->

@@ -1,9 +1,9 @@
-﻿using System.IO;
-using Microsoft.AspNetCore;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using Pchp.Core.Utilities;
 
 namespace peachserver
 {
@@ -28,6 +28,16 @@ namespace peachserver
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.Use(async (_, next) =>
+            {
+                var first = ContextExtensions.CurrentContext;
+                first.DeclareType<MyDb>();
+                var waht = first.GetDeclaredType("MyDb");
+                await next();
+                var last = ContextExtensions.CurrentContext;
+                bool what = first == last;
+            });
 
             // add wordpress into the pipeline
             // using default configuration from appsettings.json (IConfiguration), section WordPress

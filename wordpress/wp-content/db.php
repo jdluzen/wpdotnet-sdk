@@ -1,0 +1,3 @@
+﻿<?php
+
+$wpdb = loader::load();

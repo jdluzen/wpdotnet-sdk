@@ -21,9 +21,16 @@
   </ItemGroup>
   <ItemGroup>
     <!--PackageReference Include="Peachpie.RequestHandler" Version="$(PeachpieVersion)" /-->
+    <ProjectReference Include="..\loader\loader.csproj" />
     <ProjectReference Include="..\PeachPied.WordPress.Sdk\PeachPied.WordPress.Sdk.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-*" PrivateAssets="All"/>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-*" PrivateAssets="All" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="wp-content\db.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="Peachpie.App" Version="1.0.0-appv3046" />
   </ItemGroup>
 </Project>

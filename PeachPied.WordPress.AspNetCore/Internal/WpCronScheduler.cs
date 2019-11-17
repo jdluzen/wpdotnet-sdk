@@ -37,7 +37,7 @@ namespace PeachPied.WordPress.AspNetCore.Internal
                     ctx.Include(null, ScriptPath);  // include 'wp-cron.php'
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 // TODO: log the exception
             }
